@@ -29,6 +29,10 @@ public class SfgDiApplication {
 		System.out.println("------- Primary");
 		PrimaryController primaryController = (PrimaryController) ctx.getBean("primaryController");
 		System.out.println(primaryController.getGreeting());
+
+		System.out.println("-------- Profiles");
+		I18NController i18NController = (I18NController) ctx.getBean("i18NController");
+		System.out.println(i18NController.getGreeting());
 	}
 
 }
