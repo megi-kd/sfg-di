@@ -1,6 +1,8 @@
 package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controllers.*;
+import guru.springframework.sfgdi.controllers.solid.ClaimApprovalManager;
+import guru.springframework.sfgdi.services.solid.HealthInsuranceSurveyor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -33,6 +35,15 @@ public class SfgDiApplication {
 		System.out.println("-------- Profiles");
 		I18NController i18NController = (I18NController) ctx.getBean("i18NController");
 		System.out.println(i18NController.getGreeting());
+
+		System.out.println("-------- O - Open princple from SOLID ");
+		ClaimApprovalManager claimApprovalManager = (ClaimApprovalManager) ctx.getBean("claimApprovalManager");
+		System.out.println("calling process claim started: ");
+		claimApprovalManager.processClaim();
+		ClaimApprovalManager claimApprovalManager1 = new ClaimApprovalManager(new HealthInsuranceSurveyor());
+		System.out.println("calling process claim 2 started: ");
+		claimApprovalManager1.processClaim();
+
 	}
 
 }
