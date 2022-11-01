@@ -1,6 +1,6 @@
 package guru.springframework.sfgdi.controllers.solid;
 
-import guru.springframework.sfgdi.services.solid.InsuranceSurveyor;
+import guru.springframework.sfgdi.services.solid_o.InsuranceSurveyor;
 import org.springframework.stereotype.Controller;
 
 @Controller
