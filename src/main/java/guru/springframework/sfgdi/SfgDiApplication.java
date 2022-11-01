@@ -2,7 +2,7 @@ package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.controllers.solid.ClaimApprovalManager;
-import guru.springframework.sfgdi.services.solid.HealthInsuranceSurveyor;
+import guru.springframework.sfgdi.services.solid_o.HealthInsuranceSurveyor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

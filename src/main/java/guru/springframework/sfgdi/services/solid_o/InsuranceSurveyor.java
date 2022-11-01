@@ -1,4 +1,4 @@
-package guru.springframework.sfgdi.services.solid;
+package guru.springframework.sfgdi.services.solid_o;
 
 
 public interface InsuranceSurveyor {
