@@ -36,6 +36,9 @@ public class SfgDiApplication {
 		I18NController i18NController = (I18NController) ctx.getBean("i18NController");
 		System.out.println(i18NController.getGreeting());
 
+		PetController petController = (PetController) ctx.getBean("petController");
+		System.out.println(petController.getActivePetType());
+
 		System.out.println("-------- O - Open princple from SOLID ");
 		ClaimApprovalManager claimApprovalManager = (ClaimApprovalManager) ctx.getBean("claimApprovalManager");
 		System.out.println("calling process claim started: ");
