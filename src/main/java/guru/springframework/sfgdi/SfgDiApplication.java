@@ -1,12 +1,15 @@
 package guru.springframework.sfgdi;
 
+import com.sfg.pets.controllers.PetController;
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.controllers.solid.ClaimApprovalManager;
 import guru.springframework.sfgdi.services.solid_o.HealthInsuranceSurveyor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan({"guru.springframework.sfgdi", "com.sfg.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 
