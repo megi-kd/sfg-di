@@ -42,6 +42,10 @@ public class SfgDiApplication {
 		PetController petController = (PetController) ctx.getBean("petController");
 		System.out.println(petController.getActivePetType());
 
+		System.out.println("------ @Bean annotation");
+		AdditionalController additionalController = (AdditionalController) ctx.getBean("additionalController");
+		System.out.println(additionalController.getGreeting());
+
 		System.out.println("-------- O - Open princple from SOLID ");
 		ClaimApprovalManager claimApprovalManager = (ClaimApprovalManager) ctx.getBean("claimApprovalManager");
 		System.out.println("calling process claim started: ");
