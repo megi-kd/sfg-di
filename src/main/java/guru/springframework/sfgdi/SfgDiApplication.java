@@ -42,6 +42,10 @@ public class SfgDiApplication {
 		PetController petController = (PetController) ctx.getBean("petController");
 		System.out.println(petController.getActivePetType());
 
+		System.out.println("--------@Bean Profiles");
+		System.out.println(i18NController.getBeanGreeting());
+
+
 		System.out.println("------ @Bean annotation");
 		AdditionalController additionalController = (AdditionalController) ctx.getBean("additionalController");
 		System.out.println(additionalController.getGreeting());
