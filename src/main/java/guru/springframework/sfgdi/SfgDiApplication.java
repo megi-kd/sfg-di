@@ -50,6 +50,11 @@ public class SfgDiApplication {
 		AdditionalController additionalController = (AdditionalController) ctx.getBean("additionalController");
 		System.out.println(additionalController.getGreeting());
 
+
+		System.out.println("------ @Bean with DI EnlgishRepsotioryIMPL in config");
+		System.out.println(additionalController.getGreetingEN());
+
+
 		System.out.println("-------- O - Open princple from SOLID ");
 		ClaimApprovalManager claimApprovalManager = (ClaimApprovalManager) ctx.getBean("claimApprovalManager");
 		System.out.println("calling process claim started: ");
