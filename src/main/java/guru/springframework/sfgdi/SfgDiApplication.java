@@ -3,6 +3,8 @@ package guru.springframework.sfgdi;
 import com.sfg.pets.controllers.PetController;
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.controllers.solid.ClaimApprovalManager;
+import guru.springframework.sfgdi.services.scope.PrototypeBean;
+import guru.springframework.sfgdi.services.scope.SingletonBean;
 import guru.springframework.sfgdi.services.solid_o.HealthInsuranceSurveyor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -62,6 +64,21 @@ public class SfgDiApplication {
 		ClaimApprovalManager claimApprovalManager1 = new ClaimApprovalManager(new HealthInsuranceSurveyor());
 		System.out.println("calling process claim 2 started: ");
 		claimApprovalManager1.processClaim();
+
+		System.out.println("-------- BEAN SCOPE   ----------");
+		SingletonBean singletonBean = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean.getMyScope());
+		SingletonBean singletonBean2 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean2.getMyScope());
+
+		PrototypeBean prototypeBean = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean.getMyScope());
+		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean2.getMyScope());
+
+
+
+
 
 	}
 
