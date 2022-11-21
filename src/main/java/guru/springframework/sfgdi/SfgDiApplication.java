@@ -3,6 +3,7 @@ package guru.springframework.sfgdi;
 import com.sfg.pets.controllers.PetController;
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.controllers.solid.ClaimApprovalManager;
+import guru.springframework.sfgdi.datasource.FakeDatasource;
 import guru.springframework.sfgdi.services.scope.PrototypeBean;
 import guru.springframework.sfgdi.services.scope.SingletonBean;
 import guru.springframework.sfgdi.services.solid_o.HealthInsuranceSurveyor;
@@ -76,7 +77,11 @@ public class SfgDiApplication {
 		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
 
-
+		System.out.println("-------- USING EXTERNAL PROPERTIES   ----------");
+		FakeDatasource fakeDatasource = ctx.getBean(FakeDatasource.class);
+		System.out.println(fakeDatasource.getUsername());
+		System.out.println(fakeDatasource.getPassword());
+		System.out.println(fakeDatasource.getJdbcurl());
 
 
 
