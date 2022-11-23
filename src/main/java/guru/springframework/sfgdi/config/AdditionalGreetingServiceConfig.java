@@ -5,11 +5,22 @@ import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
+@EnableConfigurationProperties(SfgConstructorConfig.class)
 @PropertySource("classpath:datasource.properties")
 @Configuration
 public class AdditionalGreetingServiceConfig {
+
+    @Bean
+    FakeDatasource fakeDatasourceDI(SfgConstructorConfig sfgConstructorConfig){
+        FakeDatasource fakeDatasource = new FakeDatasource();
+        fakeDatasource.setUsername(sfgConstructorConfig.getUsername());
+        fakeDatasource.setPassword(sfgConstructorConfig.getPassword());
+        fakeDatasource.setJdbcurl(sfgConstructorConfig.getJdbcURL());
+        return fakeDatasource;
+    }
 
     @Bean
     FakeDatasource fakeDatasource(@Value("${guru.username}") String username,
